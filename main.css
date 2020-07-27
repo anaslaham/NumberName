@@ -1,0 +1,40 @@
+.card{
+    display: inline-block;
+    padding: 2rem;
+    box-shadow: .21rem .21rem 2rem rgba(0, 0, 0, .7);
+    border-radius:.8rem ;
+   margin-top: 50vh;
+   margin-left: 50vw;
+    transform: translate(-50%,-50%);
+}
+h1{
+    text-align: right;
+}
+#result{
+    display: inline;
+}
+.res__box{
+    margin-top: 2rem;
+    text-align: right;
+}
+#copy{
+    margin-left: 1rem;
+}
+.card__icons{
+    display: inline-block;
+    box-shadow: .21rem .21rem 2rem rgba(0, 0, 0, .7);
+    border-radius:.8rem ;
+    padding: .5rem;
+    position: fixed;
+    bottom: -1rem;
+    left:50%;
+    transform: translateX(-50%);
+}
+h2{
+    padding: 0;
+    margin-bottom: 0;
+    transform: translateY(-90%);
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 300;
+}

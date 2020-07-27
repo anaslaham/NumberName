@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="content">
+        <div class="header">
+          <h1 style="margin-bottom: 1rem;">قارئة العملات</h1>
+        </div>
+        <div class="description">
+          <button id="btn" class="ui violet basic button">تحويل</button>
+          <select name="currencies" id="curr" class="ui dropdown">
+            <option value="sp" id="sp" class="text">ليرة سورية</option>
+            <option value="usd" id="usd" class="text"> دولار أمريكي</option>
+            <option value="aed" id="aed" class="text">درهم إماراتي</option>
+            <option value="sr" id="sr" class="text">ريال سعودي</option>
+          </select>
+          <div class="ui input"><input id="number" type="text" /></div>
+          <label class="ui heading" for="number">أدخل الرقم</label>
+          <div class="res__box">
+            <h3 id="result"></h3>
+            <button id="copy" class="ui violet green button">
+              نسخ إلى الحافظة
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="https://www.instagram.com/anaslahamkaraki/">
+    <div class="card__icons">
+        <h2>Follow me on IG</h2>
+        <img src="https://img.icons8.com/cute-clipart/64/000000/instagram-new.png"/>
+    </div>
+</a>
+    <script src="./index.js"></script>
+  </body>
+</html>
