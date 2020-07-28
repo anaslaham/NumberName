@@ -1,4 +1,4 @@
-const main_nums = ["صفر","واحد","اثنان","ثلاثة","أربعة","خمسة","ستة","سبعة","ثمانية","تسعة","عشرة","احدى عشر","اتنى عشر","ثلاثة عشر","اربعة عشر","خمسة عشر","ستة عشر","سبعة عشر","ثمانية عشر","تسعة عشر","عشرون",];
+const main_nums = [" صفر","واحد","اثنان","ثلاثة","أربعة","خمسة","ستة","سبعة","ثمانية","تسعة","عشرة","احدى عشر","اتنى عشر","ثلاثة عشر","اربعة عشر","خمسة عشر","ستة عشر","سبعة عشر","ثمانية عشر","تسعة عشر","عشرون"];
 const units = ["مئة", "ألف", "مليون", "مليار"];
 let readGroup = (number = "") => {
   let A = "";
@@ -6,14 +6,15 @@ let readGroup = (number = "") => {
   const Ind = number[number.length - 1];
   const tens = number[number.length - 2];
   if (Ind + tens != "00") {
-      console.log(tens);
     if (number.length == 1 || tens==0) {
       A = main_nums[Ind];
     }
     if (number.length >= 2 && tens!=0) {
       if (number[number.length - 2] + number[number.length - 1] <= 29) {
         if(tens=="2" && Ind !== "0"){
+          console.log("enter");
             A = `${main_nums[Ind]} و ${main_nums[20]}`;
+            console.log(main_nums[20]);
         }else{
             A = main_nums[number[number.length - 2] + number[number.length - 1]];
         }
@@ -58,8 +59,8 @@ let readGroup = (number = "") => {
 let checknumber=(numbers)=>{
 if(numbers){
     let isNumber=true;
-const nums=["0","1","2","3","4","5","6","7","8","9","10"];
-[...numbers].forEach((number,index)=>{
+const nums=["0","1","2","3","4","5","6","7","8","9"];
+[...numbers].forEach((number)=>{
 if(!nums.includes(number)){
     isNumber = false;
 }else{
@@ -74,7 +75,7 @@ const readthousands=(number)=>{
     switch(number.length){
         case 4 :
             if(number[0]==1){
-                return`ألف و  ${readGroup(number.slice(1,number.length))}`
+                return` ألف و  ${readGroup(number.slice(1,number.length))}`
             }
             if(number[0]==2){
                 return` الفان و ${readGroup(number.slice(1,number.length))}`
@@ -92,10 +93,10 @@ const readmillions=(number)=>{
     switch(number.length){
         case 7 :
         if(number[0]==1){
-            return`${units[2]} و ${readthousands(number.slice(1))}  `
+            return`${units[2]} و ${readthousands(number.slice(1))}`
         }
         if(number[0]==2){
-            return` ${units[2]}ان و ${readthousands(number.slice(1))}`
+            return` ${units[2]} ان و ${readthousands(number.slice(1))}`
         }
         return`${main_nums[number[0]]} ملايين و ${readthousands(number.slice(1))}`
         case 8:
@@ -113,13 +114,13 @@ const readbillions=(number)=>{
             return`${units[3]} و ${readmillions(number.slice(1))}  `
         }
         if(number[0]==2){
-            return` ${units[3]}اً و ${readmillions(number.slice(1))}`
+            return` ${units[3]} اً و ${readmillions(number.slice(1))}`
         }
         return`${main_nums[number[0]]} ${units[3]} و  ${readmillions(number.slice(1))}`
         case 11:
         case 12:
         if(number!==""){
-            return`${readGroup(number.slice(0,number.length-9))}  ${units[3]}اً و ${readmillions(number.slice(number.length-9))}`
+            return`${readGroup(number.slice(0,number.length-9))}  ${units[3]} اً و ${readmillions(number.slice(number.length-9))}`
         }
         return "";
     }
