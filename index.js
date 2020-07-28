@@ -7,12 +7,12 @@ let readGroup = (number = "") => {
   const tens = number[number.length - 2];
   if (Ind + tens != "00") {
     if (number.length == 1 || tens == 0) {
-      A = main_nums[Ind];
+      A = `${main_nums[Ind]} و`;
     }
     if (number.length >= 2 && tens != 0) {
       if (number[number.length - 2] + number[number.length - 1] <= 29) {
         if (tens == "2" && Ind !== "0") {
-          A = `${main_nums[Ind]} و ${main_nums[20]}`;
+          A = `${main_nums[Ind]} و ${main_nums[20]} و`;
         } else {
           A = main_nums[number[number.length - 2] + number[number.length - 1]];
         }
@@ -21,14 +21,14 @@ let readGroup = (number = "") => {
           A = `${main_nums[number[number.length - 2]].slice(
             0,
             main_nums[number[number.length - 2]].length - 1
-          )}ون`;
+          )}ون و`;
         } else if (Ind == "0" && tens == "0") {
           A = "";
         } else if (tens != 2) {
           A = `${main_nums[Ind]} و ${main_nums[tens].slice(
             0,
             main_nums[number[number.length - 2]].length - 1
-          )}ون `;
+          )}ون و`;
         }
       }
     }
